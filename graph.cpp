@@ -41,3 +41,13 @@ Graph::~Graph()
 
    delete[] m_NodeMatrix;
 }
+
+void Graph::RemoveEdge(unsigned node1, unsigned node2)
+{
+   cout << "Removing edge: node1 = " << node1 << ", node2 = " << node2 << endl;
+
+   m_NodeMatrix[node1][node2] = false;
+   m_NodeMatrix[node2][node1] = false;
+
+   cout << "Edge successfully removed" << endl;
+}
