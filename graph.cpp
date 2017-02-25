@@ -31,3 +31,13 @@ Graph::Graph(const Graph & src)
 	memcpy((void*)m_NodeMatrix[i], src.m_NodeMatrix[i], m_NumberOfNodes * sizeof(bool));
    }
 }
+
+Graph::~Graph()
+{
+   for (unsigned i = 0; i < m_NumberOfNodes; i++)
+   {
+	delete[] m_NodeMatrix[i];
+   }
+
+   delete[] m_NodeMatrix;
+}
